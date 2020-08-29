@@ -19,6 +19,13 @@
     </parameters>
 
     <services>
+        <service id="propelbundle.panel" class="Propel\Bundle\PropelBundle\Controller\PanelController" public="true">
+            <argument type="service" id="profiler" on-invalid="null" />
+            <argument type="service" id="twig" />
+            <argument>%propel.configuration%</argument>
+            <argument>%propel.logging%</argument>
+        </service>
+
         <service id="propel.schema_locator" class="%propel.schema_locator.class%" public="true">
             <argument type="service" id="file_locator" />
             <argument>%propel.configuration%</argument>
